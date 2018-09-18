@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pofeng.iFish.mapper.UserdetailMapper" >
+  <resultMap id="BaseResultMap" type="com.pofeng.iFish.domain.Userdetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="picture" property="picture" jdbcType="VARCHAR" />
+    <result column="birth" property="birth" jdbcType="DATE" />
+    <result column="address" property="address" jdbcType="INTEGER" />
+    <result column="job" property="job" jdbcType="VARCHAR" />
+    <result column="selfinfo" property="selfinfo" jdbcType="VARCHAR" />
+    <result column="school" property="school" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uid, picture, birth, address, job, selfinfo, school
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_userdetail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_userdetail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pofeng.iFish.domain.Userdetail" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_userdetail (uid, picture, birth, 
+      address, job, selfinfo, 
+      school)
+    values (#{uid,jdbcType=INTEGER}, #{picture,jdbcType=VARCHAR}, #{birth,jdbcType=DATE}, 
+      #{address,jdbcType=INTEGER}, #{job,jdbcType=VARCHAR}, #{selfinfo,jdbcType=VARCHAR}, 
+      #{school,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pofeng.iFish.domain.Userdetail" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_userdetail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="picture != null" >
+        picture,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="job != null" >
+        job,
+      </if>
+      <if test="selfinfo != null" >
+        selfinfo,
+      </if>
+      <if test="school != null" >
+        school,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="picture != null" >
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="selfinfo != null" >
+        #{selfinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null" >
+        #{school,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pofeng.iFish.domain.Userdetail" >
+    update t_userdetail
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="picture != null" >
+        picture = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="selfinfo != null" >
+        selfinfo = #{selfinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null" >
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pofeng.iFish.domain.Userdetail" >
+    update t_userdetail
+    set uid = #{uid,jdbcType=INTEGER},
+      picture = #{picture,jdbcType=VARCHAR},
+      birth = #{birth,jdbcType=DATE},
+      address = #{address,jdbcType=INTEGER},
+      job = #{job,jdbcType=VARCHAR},
+      selfinfo = #{selfinfo,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

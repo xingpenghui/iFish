@@ -9,5 +9,8 @@
         <module name="iFish" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="iFish" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

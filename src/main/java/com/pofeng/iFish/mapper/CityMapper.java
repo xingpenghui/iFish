@@ -1,7 +1,9 @@
 package com.pofeng.iFish.mapper;
 
 import com.pofeng.iFish.domain.City;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CityMapper {
     int deleteByPrimaryKey(Integer id);
 

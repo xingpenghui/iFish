@@ -1,7 +1,9 @@
 package com.pofeng.iFish.mapper;
 
 import com.pofeng.iFish.domain.Userdetail;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserdetailMapper {
     int deleteByPrimaryKey(Integer id);
 

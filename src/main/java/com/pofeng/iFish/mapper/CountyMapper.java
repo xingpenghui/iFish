@@ -1,7 +1,9 @@
 package com.pofeng.iFish.mapper;
 
 import com.pofeng.iFish.domain.County;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CountyMapper {
     int deleteByPrimaryKey(Integer id);
 

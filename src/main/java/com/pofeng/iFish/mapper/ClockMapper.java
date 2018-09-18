@@ -1,7 +1,9 @@
 package com.pofeng.iFish.mapper;
 
 import com.pofeng.iFish.domain.Clock;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ClockMapper {
     int deleteByPrimaryKey(Integer id);
 

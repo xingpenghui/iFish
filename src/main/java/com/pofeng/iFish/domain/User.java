@@ -63,15 +63,4 @@ public class User {
         this.flag = flag;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone=" + phone +
-                ", createtime=" + createtime +
-                ", flag=" + flag +
-                '}';
-    }
 }

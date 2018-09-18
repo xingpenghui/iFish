@@ -347,16 +347,6 @@
                 <version>4.0.0</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-core</artifactId>
-                <version>1.4.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.csource</groupId>
-                <artifactId>fastdfs-client-java</artifactId>
-                <version>1.27-SNAPSHOT</version>
-            </dependency>
 
             <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
             <dependency>
